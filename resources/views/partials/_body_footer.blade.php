@@ -1,4 +1,9 @@
 
+<style>
+    footer{
+        border-top: 10px solid #e22d3f;
+    }
+</style>
 <footer class="iq-footer">
     <div>
         <div class="row p-4">

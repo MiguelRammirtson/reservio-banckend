@@ -1,4 +1,166 @@
 <x-app-layout bodyClass="top-nav">
+    <style>
+                :root{
+            --middleby-color-red: #e22d3f;
+            --middleby-color-blue: #083250;
+            --color-white: #fff;
+        }
+
+        body{
+            font-family: "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+        .fondo-con-texto {
+            background-image:  url(https://www.middleby.com/wp-content/uploads/2023/09/Rise-of-Takeout-Food-Fast-Casual.png.webp);
+            background-size: cover;
+            background-position: center;
+            height: 250px;
+            width: 350px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 2em;
+            padding: 20px;
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .fondo-con-texto::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+            border-radius: 1rem;
+        }
+
+        .contenido-texto {
+            position: relative;
+            z-index: 1;
+            font-size: clamp(16px, 4vw, 32px);
+            word-wrap: break-word;
+            overflow: hidden;
+            max-height: 100%;
+            width: 100%;
+            height: 100%;
+        }
+
+        .title-content-card{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title-content-card > h4{
+            color: var(--color-white)!important;
+            width: 130px;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            padding: 0;
+            border: 1.2px solid #707070;
+            margin: 0;
+        }
+
+        .title-card-presencial{
+            background-color: var(--middleby-color-red);
+        }
+
+        .title-card-online{
+            background-color: #0088d8;
+            
+        }
+
+        .body-card-content{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 0%;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .body-card-content > .price-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            width: 100%;
+            margin-bottom: 0.2rem;
+        }
+
+        .body-card-content > .price-container > p{
+            background-color: var(--middleby-color-blue);
+            color: var(--color-white)!important;
+            width: 50px;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            margin: 0;
+            padding: 0.05rem;
+            text-align: center;
+        }
+
+        .body-card-content > .title-container{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            margin-bottom: 0.5rem;
+        }
+
+
+        .body-card-content > .title-container > h2{
+            font-size: 1rem;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            font-weight: normal;
+            max-width: 200px;
+            color: var(--color-white)!important;
+            font-weight: 600;
+        }
+
+        .body-card-content > .buttons-container{
+            font-size: 1rem;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: left;
+            gap: 0.5rem;
+        }
+
+        .button-primary{
+            background-color: var(--middleby-color-red);
+            color: var(--color-white);
+            padding: 0.2rem 0.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .button-secondary{
+            background-color: var(--middleby-color-blue);
+            color: var(--color-white);
+            padding: 0.2rem 0.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+    </style>
     <div class="content-top">
         <div class="container">
             <div class="row">
@@ -82,206 +244,116 @@
                 <div class="event-content">
                     <div id="event1" class="tab-pane fade active show">
                         <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="card card-block card-stretch card-height">
-                                    <div class="card-body rounded event-detail event-detail-danger disabled">
-                                        <div class="d-flex align-items-top justify-content-between">
-                                            <div>
-                                                <h4 class="mb-2 mr-4">Reminder of App Project And Design</h4>
-                                                <p class="mb-2 text-danger font-weight-500 text-uppercase"><i class="las la-user pr-2"></i>One On One</p>
-                                                <p class="mb-4 card-description">Calendify always allows you to set the reminder to optimize task management roles and jobs.</p>
-                                                <div class="d-flex align-items-center pt-4">
-                                                    <a href="#" class="btn btn-danger mr-3 px-xl-4">50 Min</a>
-                                                    <a href="#" class="btn btn-outline-danger copy d-none px-xl-4" data-extra-toggle="copy" title="Copy to clipboard" data-toggle="tooltip"><i class="las la-link pr-2"></i>Copy Link</a>
-                                                    <a href="#" class="btn btn-outline-danger turn-on px-xl-4">Turn On</a>
-                                                </div>
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="fondo-con-texto">
+                                    <div class="contenido-texto">
+                                        <div class="title-content-card">
+                                            <h4 class="title-card-presencial">PRESENCIAL</h4>
+                                        </div>
+                                        <div class="body-card-content">
+                                            <div class="price-container">
+                                                <p>$750</p>
                                             </div>
-                                            <div class="card-header-toolbar mt-1">
-                                                <div class="dropdown d-none">
-                                                    <span class="dropdown-toggle" id="dropdownMenuButton1" data-toggle="dropdown">
-                                                        <i class="ri-more-2-fill"></i>
-                                                    </span>
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <a class="dropdown-item" href="#"><i class="ri-pencil-line mr-3"></i>Edit</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-sticky-note-line mr-3"></i>Add Internal Note</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-save-line mr-3"></i>Save to Template</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-code-s-slash-line mr-3"></i>Save to Website</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-delete-bin-6-line mr-3"></i>Delete</a>
-                                                        <div class="dropdown-item border-top mt-2">
-                                                            <div class="d-flex align-items-center justify-content-between">
-                                                                <div>On/Off</div>
-                                                                <div class="custom-control custom-switch p-0">
-                                                                    <input type="checkbox" class="custom-control-input card-change" id="customSwitch2" checked>
-                                                                    <label class="custom-control-label" for="customSwitch2"></label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="title-container">
+                                                <h2>
+                                                    CAPACITACIÓN TÉCNICA PRESENCIAL - FOLLETT
+                                                </h2>
+                                            </div>
+                                            <div class="buttons-container">
+                                                <button class="button-primary">RESERVAR</button>
+                                                <button class="button-secondary">DETALLES</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="card card-block card-stretch card-height">
-                                    <div class="card-body rounded event-detail event-detail-info">
-                                        <div class="d-flex align-items-top justify-content-between">
-                                            <div>
-                                                <h4 class="mb-2 mr-4">Email Signature for Support Team</h4>
-                                                <p class="mb-2 text-info font-weight-500 text-uppercase"><i class="las la-user pr-2"></i>One On One</p>
-                                                <p class="mb-4 card-description">Outsmart back-and-forth in communication by staying alert with your support team follow-ups.</p>
-                                                <div class="d-flex align-items-center pt-4">
-                                                    <a href="#" class="btn btn-info mr-3 px-xl-4">30 Min</a>
-                                                    <a href="#" class="btn btn-outline-info copy px-xl-4" data-extra-toggle="copy" title="Copy to clipboard" data-toggle="tooltip"><i class="las la-link pr-2"></i>Copy Link</a>
-                                                    <a href="#" class="btn btn-outline-info d-none turn-on px-xl-4">Turn On</a>
-                                                </div>
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="fondo-con-texto">
+                                    <div class="contenido-texto">
+                                        <div class="title-content-card">
+                                            <h4 class="title-card-online">ONLINE</h4>
+                                        </div>
+                                        <div class="body-card-content">
+                                            <div class="price-container">
+                                                <p>$750</p>
                                             </div>
-                                            <div class="card-header-toolbar mt-1">
-                                                <div class="dropdown">
-                                                    <span class="dropdown-toggle" id="dropdownMenuButton02" data-toggle="dropdown">
-                                                        <i class="ri-more-2-fill"></i>
-                                                    </span>
-                                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton02">
-                                                        <a class="dropdown-item" href="#"><i class="ri-pencil-line mr-3"></i>Edit</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-sticky-note-line mr-3"></i>Add Internal Note</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-save-line mr-3"></i>Save to Template</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-code-s-slash-line mr-3"></i>Save to Website</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-delete-bin-6-line mr-3"></i>Delete</a>
-                                                        <div class="dropdown-item border-top mt-2">
-                                                            <div class="d-flex align-items-center justify-content-between">
-                                                                <div>On/Off</div>
-                                                                <div class="custom-control custom-switch p-0">
-                                                                    <input type="checkbox" class="custom-control-input card-change" id="customSwitch5">
-                                                                    <label class="custom-control-label" for="customSwitch5"></label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="title-container">
+                                                <h2>
+                                                    CAPACITACIÓN TÉCNICA PRESENCIAL - FOLLETT
+                                                </h2>
+                                            </div>
+                                            <div class="buttons-container">
+                                                <button class="button-primary">RESERVAR</button>
+                                                <button class="button-secondary">DETALLES</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="card card-block card-stretch card-height">
-                                    <div class="card-body rounded event-detail event-detail-success">
-                                        <div class="d-flex align-items-top justify-content-between">
-                                            <div>
-                                                <h4 class="mb-2 mr-4">Plugins & Team Review Meeting</h4>
-                                                <p class="mb-2 text-success font-weight-500 text-uppercase"><i class="las la-user-friends pr-2"></i>Group</p>
-                                                <p class="mb-4 card-description">Calendify lets you to simplify and prioritize your calendar and your team’s calendar with review. </p>
-                                                <div class="d-flex align-items-center pt-4">
-                                                    <a href="#" class="btn btn-success mr-3 px-xl-4">35 Min</a>
-                                                    <a href="#" class="btn btn-outline-success copy px-xl-4" data-extra-toggle="copy" title="Copy to clipboard" data-toggle="tooltip"><i class="las la-link pr-2"></i>Copy Link</a>
-                                                    <a href="#" class="btn btn-outline-success d-none turn-on px-xl-4">Turn On</a>
-                                                </div>
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="fondo-con-texto">
+                                    <div class="contenido-texto">
+                                        <div class="title-content-card">
+                                            <h4 class="title-card-presencial">PRESENCIAL</h4>
+                                        </div>
+                                        <div class="body-card-content">
+                                            <div class="price-container">
+                                                <p>$750</p>
                                             </div>
-                                            <div class="card-header-toolbar mt-1">
-                                                <div class="dropdown">
-                                                    <span class="dropdown-toggle" id="dropdownMenuButton03" data-toggle="dropdown">
-                                                        <i class="ri-more-2-fill"></i>
-                                                    </span>
-                                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton03">
-                                                        <a class="dropdown-item" href="#"><i class="ri-pencil-line mr-3"></i>Edit</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-sticky-note-line mr-3"></i>Add Internal Note</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-save-line mr-3"></i>Save to Template</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-code-s-slash-line mr-3"></i>Save to Website</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-delete-bin-6-line mr-3"></i>Delete</a>
-                                                        <div class="dropdown-item border-top mt-2">
-                                                            <div class="d-flex align-items-center justify-content-between">
-                                                                <div>On/Off</div>
-                                                                <div class="custom-control custom-switch p-0">
-                                                                    <input type="checkbox" class="custom-control-input card-change" id="customSwitch1">
-                                                                    <label class="custom-control-label" for="customSwitch1"></label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="title-container">
+                                                <h2>
+                                                    CAPACITACIÓN TÉCNICA PRESENCIAL - FOLLETT
+                                                </h2>
+                                            </div>
+                                            <div class="buttons-container">
+                                                <button class="button-primary">RESERVAR</button>
+                                                <button class="button-secondary">DETALLES</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="card card-block card-stretch card-height">
-                                    <div class="card-body rounded event-detail event-detail-primary">
-                                        <div class="d-flex align-items-top justify-content-between">
-                                            <div>
-                                                <h4 class="mb-2 mr-4">New Year Iqonic Design Campaigns</h4>
-                                                <p class="mb-2 text-primary font-weight-500 text-uppercase"><i class="las la-user-friends pr-2"></i>Group</p>
-                                                <p class="mb-4 card-description">Quickly schedule and set the event type to manage all your marketing and management campaigns. </p>
-                                                <div class="d-flex align-items-center pt-4">
-                                                    <a href="#" class="btn btn-primary mr-3 px-xl-4">15 Min</a>
-                                                    <a href="#" class="btn btn-outline-primary copy px-xl-4" data-extra-toggle="copy" title="Copy to clipboard" data-toggle="tooltip"><i class="las la-link pr-2"></i>Copy Link</a>
-                                                    <a href="#" class="btn btn-outline-primary d-none turn-on px-xl-4">Turn On</a>
-                                                </div>
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="fondo-con-texto">
+                                    <div class="contenido-texto">
+                                        <div class="title-content-card">
+                                            <h4 class="title-card-online">ONLINE</h4>
+                                        </div>
+                                        <div class="body-card-content">
+                                            <div class="price-container">
+                                                <p>$750</p>
                                             </div>
-                                            <div class="card-header-toolbar mt-1">
-                                                <div class="dropdown">
-                                                    <span class="dropdown-toggle" id="dropdownMenuButton4" data-toggle="dropdown">
-                                                        <i class="ri-more-2-fill"></i>
-                                                    </span>
-                                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton4">
-                                                        <a class="dropdown-item" href="#"><i class="ri-pencil-line mr-3"></i>Edit</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-sticky-note-line mr-3"></i>Add Internal Note</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-save-line mr-3"></i>Save to Template</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-code-s-slash-line mr-3"></i>Save to Website</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-delete-bin-6-line mr-3"></i>Delete</a>
-                                                        <div class="dropdown-item border-top mt-2">
-                                                            <div class="d-flex align-items-center justify-content-between">
-                                                                <div>On/Off</div>
-                                                                <div class="custom-control custom-switch p-0">
-                                                                    <input type="checkbox" class="custom-control-input card-change" id="customSwitch4">
-                                                                    <label class="custom-control-label" for="customSwitch4"></label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="title-container">
+                                                <h2>
+                                                    CAPACITACIÓN TÉCNICA PRESENCIAL - FOLLETT
+                                                </h2>
+                                            </div>
+                                            <div class="buttons-container">
+                                                <button class="button-primary">RESERVAR</button>
+                                                <button class="button-secondary">DETALLES</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="card card-block card-stretch card-height">
-                                    <div class="card-body rounded event-detail event-detail-warning">
-                                        <div class="d-flex align-items-top justify-content-between">
-                                            <div>
-                                                <h4 class="mb-2 mr-4">Project And Task Management Roles</h4>
-                                                <p class="mb-2 text-warning font-weight-500 text-uppercase"><i class="las la-user-friends pr-2"></i>Group</p>
-                                                <p class="mb-4 card-description">Set reminders for your team regarding their project and task completion so that they are not overlooked. </p>
-                                                <div class="d-flex align-items-center pt-4">
-                                                    <a href="#" class="btn btn-warning mr-3 px-xl-4">25 Min</a>
-                                                    <a href="#" class="btn btn-outline-warning copy px-xl-4" data-extra-toggle="copy" title="Copy to clipboard" data-toggle="tooltip"><i class="las la-link pr-2"></i>Copy Link</a>
-                                                    <a href="#" class="btn btn-outline-warning d-none turn-on px-xl-4">Turn On</a>
-                                                </div>
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="fondo-con-texto">
+                                    <div class="contenido-texto">
+                                        <div class="title-content-card">
+                                            <h4 class="title-card-presencial">PRESENCIAL</h4>
+                                        </div>
+                                        <div class="body-card-content">
+                                            <div class="price-container">
+                                                <p>$750</p>
                                             </div>
-                                            <div class="card-header-toolbar mt-1">
-                                                <div class="dropdown">
-                                                    <span class="dropdown-toggle" id="dropdownMenuButton5" data-toggle="dropdown">
-                                                        <i class="ri-more-2-fill"></i>
-                                                    </span>
-                                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton5">
-                                                        <a class="dropdown-item" href="#"><i class="ri-pencil-line mr-3"></i>Edit</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-sticky-note-line mr-3"></i>Add Internal Note</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-save-line mr-3"></i>Save to Template</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-code-s-slash-line mr-3"></i>Save to Website</a>
-                                                        <a class="dropdown-item" href="#"><i class="ri-delete-bin-6-line mr-3"></i>Delete</a>
-                                                        <div class="dropdown-item border-top mt-2">
-                                                            <div class="d-flex align-items-center justify-content-between">
-                                                                <div>On/Off</div>
-                                                                <div class="custom-control custom-switch p-0">
-                                                                    <input type="checkbox" class="custom-control-input card-change" id="customSwitch3">
-                                                                    <label class="custom-control-label" for="customSwitch3"></label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="title-container">
+                                                <h2>
+                                                    CAPACITACIÓN TÉCNICA PRESENCIAL - FOLLETT
+                                                </h2>
+                                            </div>
+                                            <div class="buttons-container">
+                                                <button class="button-primary">RESERVAR</button>
+                                                <button class="button-secondary">DETALLES</button>
                                             </div>
                                         </div>
                                     </div>
